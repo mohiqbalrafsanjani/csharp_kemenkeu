@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Globalization;
 
 namespace FavoriteMovies.Controllers
 {
@@ -7,13 +9,12 @@ namespace FavoriteMovies.Controllers
     [ApiController]
     public class FavoriteMovieController : ControllerBase
     {
-        [HttpGet]
-        public async Task<ActionResult<List<FavoriteMovie>>> Get()
-        {
-            var movies = new List<FavoriteMovie>
+        CultureInfo provider = CultureInfo.InvariantCulture;
+
+        private static List<FavoriteMovie> movies = new List<FavoriteMovie>
             {
-                new FavoriteMovie 
-                { 
+                new FavoriteMovie
+                {
                     Id = 1,
                     Title = "Mad Max: Fury Road",
                     Genre = "Action/Adventure",
@@ -22,6 +23,16 @@ namespace FavoriteMovies.Controllers
                 }
             };
 
+        [HttpGet]
+        public async Task<ActionResult<List<FavoriteMovie>>> Get()
+        {
+            return Ok(movies);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<List<FavoriteMovie>>> AddMovie(FavoriteMovie movie)
+        {
+            movies.Add(movie);
             return Ok(movies);
         }
     }

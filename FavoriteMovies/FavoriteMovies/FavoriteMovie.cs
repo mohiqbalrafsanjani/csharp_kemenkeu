@@ -6,7 +6,7 @@
         public string Title { get; set; } = string.Empty;
         public string Genre { get; set; } = string.Empty;
         public string Director { get; set; } = string.Empty;
-        public DateTime ReleaseDate { get; set; } = DateTime.MinValue;
+        public DateTime ReleaseDate { get; set; }
 
     }
 }
