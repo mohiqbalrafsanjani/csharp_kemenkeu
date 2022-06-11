@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FavoriteMovies.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Globalization;
 
@@ -9,38 +11,25 @@ namespace FavoriteMovies.Controllers
     [ApiController]
     public class FavoriteMovieController : ControllerBase
     {
-        CultureInfo provider = CultureInfo.InvariantCulture;
+        
+        private readonly DataContext _context; 
 
-        private static List<FavoriteMovie> movies = new List<FavoriteMovie>
-            {
-                new FavoriteMovie
-                {
-                    Id = 1,
-                    Title = "Mad Max: Fury Road",
-                    Genre = "Action/Adventure",
-                    Director = "George Miller",
-                    ReleaseDate = DateTime.Parse("2015/05/14"),
-                },
-                new FavoriteMovie
-                {
-                    Id = 2,
-                    Title = "The Hateful Eight",
-                    Genre = "Western/Drama",
-                    Director = "Quentin Tarantino",
-                    ReleaseDate = DateTime.Parse("2016/01/19"),
-                },
-            };
+        public FavoriteMovieController(DataContext context)
+        {
+            _context = context;
+
+        }
 
         [HttpGet]
         public async Task<ActionResult<List<FavoriteMovie>>> Get()
         {
-            return Ok(movies);
+            return Ok(await _context.FavoriteMovies.ToListAsync());
         }
         
         [HttpGet("{id}")]
         public async Task<ActionResult<FavoriteMovie>> GetMovie(int id)
         {
-            var movie = movies.Find(m => m.Id == id);
+            var movie = await _context.FavoriteMovies.FindAsync(id);
             if (movie == null)
             {
                 return BadRequest("Movie not found!");
@@ -51,36 +40,40 @@ namespace FavoriteMovies.Controllers
         [HttpPost]
         public async Task<ActionResult<List<FavoriteMovie>>> AddMovie(FavoriteMovie movie)
         {
-            movies.Add(movie);
-            return Ok(movies);
+            _context.FavoriteMovies.Add(movie);
+            await _context.SaveChangesAsync();
+            return Ok(await _context.FavoriteMovies.ToListAsync());
         }
 
         [HttpPut]
         public async Task<ActionResult<List<FavoriteMovie>>> UpdateMovie(FavoriteMovie request)
         {
-            var movie = movies.Find(m => m.Id == request.Id);
-            if (movie == null)
+            var dbmovie = await _context.FavoriteMovies.FindAsync(request.Id);
+            if (dbmovie == null)
             {
                 return BadRequest("Movie not found!");
             }
-            movie.Title = request.Title;
-            movie.Genre = request.Genre;
-            movie.Director = request.Director;
-            movie.ReleaseDate = request.ReleaseDate;
+            dbmovie.Title = request.Title;
+            dbmovie.Genre = request.Genre;
+            dbmovie.Director = request.Director;
+            dbmovie.ReleaseDate = request.ReleaseDate;
             
-            return Ok(movies);
+            await _context.SaveChangesAsync();
+
+            return Ok(await _context.FavoriteMovies.ToListAsync());
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<FavoriteMovie>> DeleteMovie(int id)
         {
-            var movie = movies.Find(m => m.Id == id);
+            var movie = await _context.FavoriteMovies.FindAsync(id);
             if (movie == null)
             {
                 return BadRequest("Movie not found!");
             }
-            movies.Remove(movie);
-            return Ok(movies);
+            _context.FavoriteMovies.Remove(movie);
+            await _context.SaveChangesAsync();
+            return Ok(await _context.FavoriteMovies.ToListAsync());
         }
     }
 }
