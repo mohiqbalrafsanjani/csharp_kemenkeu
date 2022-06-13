@@ -9,10 +9,19 @@ import { MessageService } from './message.service';
 })
 export class MovieService {
 
+  constructor(private messageService: MessageService) { }
+
   getMovies(): Observable<Movie[]> {
     const movies = of(MockMovie);
     this.messageService.add('MovieService: fetched movies');
     return movies;
   }
-  constructor(private messageService: MessageService) { }
+
+  getMovie(id: number): Observable<Movie> {
+    const movie = MockMovie.find(m => m.id === id)!;
+    this.messageService.add(`MovieService: fetched movies id= ${id}`);
+    return of(movie);
+  }
+
+  
 }
