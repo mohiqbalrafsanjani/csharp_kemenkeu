@@ -116,3 +116,9 @@ D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\obj\Debug\net6.0\refint\Favorit
 D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\obj\Debug\net6.0\FavoriteMovies.pdb
 D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\obj\Debug\net6.0\FavoriteMovies.genruntimeconfig.cache
 D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\obj\Debug\net6.0\ref\FavoriteMovies.dll
+D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\bin\Debug\net6.0\System.Web.Cors.dll
+D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\bin\Debug\net6.0\System.Web.Http.dll
+D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\bin\Debug\net6.0\System.Web.Http.Cors.dll
+D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Github\csharp_kemenkeu\BackEnd\FavoriteMovies\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
