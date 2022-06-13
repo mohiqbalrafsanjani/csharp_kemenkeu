@@ -7,12 +7,4 @@
         </button>
     </li>
 </ul>
-
-<div *ngIf="selectedMovie">
-    <h2>{{selectedMovie.title | uppercase}} Details</h2>
-    <div>id: {{selectedMovie.id}}</div>
-    <div>
-      <label for="movie-title">Movie title: </label>
-      <input id="movie-title" [(ngModel)]="selectedMovie.title" placeholder="movie title">
-    </div>
-  </div>
+<app-movie-detail [movie]="selectedMovie"></app-movie-detail>
