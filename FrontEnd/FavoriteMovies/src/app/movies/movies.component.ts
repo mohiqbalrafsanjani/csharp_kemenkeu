@@ -15,7 +15,7 @@ export class MoviesComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
-    //private messageService: MessageService
+    private messageService: MessageService
     ) { }
 
   getMovies(): void {
