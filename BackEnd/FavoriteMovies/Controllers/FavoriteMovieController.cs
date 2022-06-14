@@ -59,7 +59,8 @@ namespace FavoriteMovies.Controllers
             dbmovie.Genre = request.Genre;
             dbmovie.Director = request.Director;
             dbmovie.ReleaseDate = request.ReleaseDate;
-            
+            dbmovie.Image = request.Image;
+
             await _context.SaveChangesAsync();
 
             return Ok(await _context.FavoriteMovies.ToListAsync());

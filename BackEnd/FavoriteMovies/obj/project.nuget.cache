@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nJBzu2+xnkO/WVSZKl//qVLShBxvPUmD9wJKRt3yYDZxc5N+l2Z/FdaJW4n97q33nAJ6jiddYxqb0MIGznL50w==",
+  "dgSpecHash": "bWFgQsI4eZwNkN00Mgc9M2S4ZbriYITuH6c3GwTC7dDnFF+JbSKixKlIVs0WgaBDEQQ4/1IsCNJ8XwtPIYXpWw==",
   "success": true,
-  "projectFilePath": "D:\\Github\\csharp_kemenkeu\\BackEnd\\FavoriteMovies\\FavoriteMovies.csproj",
+  "projectFilePath": "D:\\Github\\csharp_kemenkeu\\BackEnd\\favoritemovies\\FavoriteMovies.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iqbaloutlaw\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\iqbaloutlaw\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.9\\microsoft.aspnet.cors.5.2.9.nupkg.sha512",
