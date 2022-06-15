@@ -6,7 +6,9 @@
         public string Title { get; set; } = string.Empty;
         public string Genre { get; set; } = string.Empty;
         public string Director { get; set; } = string.Empty;
-        public DateTime ReleaseDate { get; set; }
+        public string ReleaseDate { get; set; } = string.Empty;
+        public string Image { get; set; } = string.Empty;
+        public string Video { get; set; } = string.Empty;
 
     }
 }

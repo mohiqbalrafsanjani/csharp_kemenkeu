@@ -1,0 +1,34 @@
+<h1><strong>Form Add Movie</strong></h1>
+<div class="container">
+    <form class="row g-3" #addMovieForm="ngForm" (ngSubmit)="addMovieData(addMovieForm.value)">
+        <div class="col-md-11 border rounded">
+            <div class="mb-3">
+                <label for="Title" class="form-label"><strong>Title</strong></label>
+                <input type="text" ngModel name="title" class="form-control" id="Title" placeholder="Title" required>
+            </div>
+            <div class="mb-3">
+                <label for="Genre" class="form-label"><strong>Genre</strong></label>
+                <input type="text" ngModel name="genre" class="form-control" id="Genre" placeholder="Genre" required>
+            </div>
+            <div class="mb-3">
+                <label for="Director" class="form-label"><strong>Director</strong></label>
+                <input type="text" ngModel name="director" class="form-control" id="Director" placeholder="Director" required>
+            </div>
+            <div class="mb-3">
+                <label for="ReleaseDate" class="form-label"><strong>Release Date</strong></label>
+                <input type="date" ngModel name="releaseDate" class="form-control" id="ReleaseDate" placeholder="ReleaseDate" required>
+            </div>
+            <div class="mb-3">
+                <label for="Image" class="form-label"><strong>Image Url</strong></label>
+                <input type="text" ngModel name="image" class="form-control" id="Image" placeholder="Image Url" required>
+            </div>
+            <div class="mb-3">
+                <label for="Video" class="form-label"><strong>Video Url</strong></label>
+                <input type="text" ngModel name="video" class="form-control" id="Video" placeholder="Video Url" required>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary mb-3">Add Movie</button>
+            </div>
+        </div>
+    </form>
+</div>

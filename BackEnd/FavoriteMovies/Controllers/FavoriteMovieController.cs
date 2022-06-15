@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Globalization;
+using System.Web.Http.Cors;
 
 namespace FavoriteMovies.Controllers
 {
-    [Route("api/[controller]")]
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+    [Route("api/[controller]")]    
     [ApiController]
     public class FavoriteMovieController : ControllerBase
     {
@@ -57,7 +59,9 @@ namespace FavoriteMovies.Controllers
             dbmovie.Genre = request.Genre;
             dbmovie.Director = request.Director;
             dbmovie.ReleaseDate = request.ReleaseDate;
-            
+            dbmovie.Image = request.Image;
+            dbmovie.Video = request.Video;  
+
             await _context.SaveChangesAsync();
 
             return Ok(await _context.FavoriteMovies.ToListAsync());
@@ -75,5 +79,7 @@ namespace FavoriteMovies.Controllers
             await _context.SaveChangesAsync();
             return Ok(await _context.FavoriteMovies.ToListAsync());
         }
+
+        
     }
 }
