@@ -5,5 +5,6 @@ export interface Movie {
     director: string;
     releaseDate: string;
     image: string;
+    video: string;
 
 }

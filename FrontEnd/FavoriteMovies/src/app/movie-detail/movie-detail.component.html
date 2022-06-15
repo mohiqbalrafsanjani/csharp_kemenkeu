@@ -1,9 +1,25 @@
-<div *ngIf="movie">
-  <h2>{{movie.title | uppercase}} Details</h2>
-  <div>id: {{movie.id}}</div>
-  <div>
-    <label for="movie-title">Movie title: </label>
-    <input id="movie-title" [(ngModel)]="movie.title" placeholder="movie title">
+<div class="container">
+  <div *ngIf="movie">
+    <div class="row mb-2 justify-content-center">
+      <div class="col-md-11">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
+          <div class="col-auto">
+            <img src="{{movie.image}}" width="382" height="548" class="img-fluid">
+          </div>
+          <div class="col p-4 position-static">
+            <h1 class="mb-0">{{movie.title}}</h1>
+            <div class="mb-1 text-muted"><strong>{{movie.director}} / {{movie.genre}} / {{movie.releaseDate}}</strong></div>
+            <div class="ratio ratio-16x9">
+              <iframe width="560" height="315" [src]="videoUrl(movie.video)"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <br>
+            <button type="button" (click)="goBack()" class="btn btn-secondary">Go Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <button type="button" (click)="goBack()">go back</button>
 </div>

@@ -10,6 +10,9 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ManageMovieComponent } from './manage-movie/manage-movie.component';
+import { AddMovieComponent } from './manage-movie/add-movie/add-movie.component';
+import { EditMovieComponent } from './manage-movie/edit-movie/edit-movie.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
     MoviesComponent,
     MovieDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    ManageMovieComponent,
+    AddMovieComponent,
+    EditMovieComponent
   ],
   imports: [
     BrowserModule,

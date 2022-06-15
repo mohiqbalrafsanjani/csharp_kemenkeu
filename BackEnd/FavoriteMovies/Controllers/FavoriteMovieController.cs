@@ -60,6 +60,7 @@ namespace FavoriteMovies.Controllers
             dbmovie.Director = request.Director;
             dbmovie.ReleaseDate = request.ReleaseDate;
             dbmovie.Image = request.Image;
+            dbmovie.Video = request.Video;  
 
             await _context.SaveChangesAsync();
 

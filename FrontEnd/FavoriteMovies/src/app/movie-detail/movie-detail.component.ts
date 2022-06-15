@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Sanitizer } from '@angular/core';
 import { Movie } from '../movie';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MovieService } from '../movie.service';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-detail',
@@ -16,8 +17,9 @@ export class MovieDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
-    private location: Location
-  ) { }
+    private location: Location,
+    private sanitizer: DomSanitizer
+  ) {}
 
   getMovie(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -31,6 +33,10 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovie();
+  }
+
+  videoUrl(url: string): SafeUrl{
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }

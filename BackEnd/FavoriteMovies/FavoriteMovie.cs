@@ -8,6 +8,7 @@
         public string Director { get; set; } = string.Empty;
         public string ReleaseDate { get; set; } = string.Empty;
         public string Image { get; set; } = string.Empty;
+        public string Video { get; set; } = string.Empty;
 
     }
 }

@@ -1,0 +1,40 @@
+<h1><strong>Form Edit Movie</strong></h1>
+<div class="container">
+    <form class="row g-3" #editMovieForm="ngForm" (ngSubmit)="editMovieData(editMovieForm.value)">
+        <div class="col-md-11 border rounded">
+            <div *ngIf="movie">
+                <div class="mb-3">
+                    <label for="Id" class="form-label"><strong>Id</strong></label>
+                    <input type="text" [(ngModel)]="movie.id" name="id" class="form-control" id="Id" placeholder="Id" value="{{movie.id}}" required readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="Title" class="form-label"><strong>Title</strong></label>
+                    <input type="text" [(ngModel)]="movie.title" name="title" class="form-control" id="Title" placeholder="Title" value="{{movie.title}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Genre" class="form-label"><strong>Genre</strong></label>
+                    <input type="text" [(ngModel)]="movie.genre" name="genre" class="form-control" id="Genre" placeholder="Genre" value="{{movie.genre}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Director" class="form-label"><strong>Director</strong></label>
+                    <input type="text" [(ngModel)]="movie.director" name="director" class="form-control" id="Director" placeholder="Director" value="{{movie.director}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ReleaseDate" class="form-label"><strong>Release Date</strong></label>
+                    <input type="date" [(ngModel)]="movie.releaseDate" name="releaseDate" class="form-control" id="ReleaseDate" placeholder="ReleaseDate" value="{{movie.releaseDate}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Image" class="form-label"><strong>Image Url</strong></label>
+                    <input type="text" [(ngModel)]="movie.image" name="image" class="form-control" id="Image" placeholder="Image Url" value="{{movie.image}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Video" class="form-label"><strong>Video Url</strong></label>
+                    <input type="text" [(ngModel)]="movie.video" name="video" class="form-control" id="Video" placeholder="Video Url" value="{{movie.image}}" required>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-warning mb-3">Edit Movie</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
