@@ -21,7 +21,7 @@ export class MovieService {
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.moviesUrl+'/FavoriteMovie')
     .pipe(
-      tap(_ => this.log('fetched heroes')),
+      tap(_ => this.log('fetched movies')),
       catchError(this.handleError<Movie[]>('getMovies', []))
     )
   }
