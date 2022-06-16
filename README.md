@@ -4,7 +4,7 @@ FrontEnd = Angular 14
 
 BackEnd = .NET 6 Web API
 
-Database = MySQL Server 2019 developer edition
+Database = SQL Server 2019 developer edition
 
 Tools = Visual Studio Code, Visual Studio 2022, SQL Server Management Studio (SSMS), Postman
 
