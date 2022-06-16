@@ -32,6 +32,7 @@
                     <input type="text" [(ngModel)]="movie.video" name="video" class="form-control" id="Video" placeholder="Video Url" value="{{movie.image}}" required>
                 </div>
                 <div class="mb-3">
+                    <button type="button" (click)="goBack()" class="btn btn-secondary mb-3">Go Back</button>
                     <button type="submit" class="btn btn-warning mb-3">Edit Movie</button>
                 </div>
             </div>
